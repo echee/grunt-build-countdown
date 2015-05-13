@@ -1,0 +1,7 @@
+{
+    "position": "[@position]",
+    "composer": "[@composer]",
+    "work": "[@work]",
+    "movement": "[@movement]",
+    "key": "[@key]"
+}

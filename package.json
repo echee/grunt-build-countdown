@@ -1,0 +1,41 @@
+{
+  "name": "grunt-build-countdown",
+  "description": "A grunt plugin for building directories and files from a json file",
+  "version": "0.1.0",
+  "homepage": "https://github.com/cheee6y/grunt-build-countdown",
+  "author": {
+    "name": "Emma Chee",
+    "email": "e.chee@hotmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cheee6y/grunt-build-countdown.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cheee6y/grunt-build-countdown/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/cheee6y/grunt-build-countdown/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "^0.9.2",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-nodeunit": "^0.3.3",
+    "grunt": "~0.4.5"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.5"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}

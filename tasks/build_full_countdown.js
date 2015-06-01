@@ -23,7 +23,9 @@ module.exports = function(grunt) {
     // Iterate over all specified file groups.
     this.files.forEach(function(file) {
       var countdown_outter = grunt.file.read(file.countdown[0]);
-      var countdown_inner = grunt.file.read(file.countdown[1]);
+      var countdown_inner;
+      var countdown_inner_wo_blurb = grunt.file.read(file.countdown[1]);
+      var countdown_inner_w_blurb = grunt.file.read(file.countdown[2]);
       var jsonfile = grunt.file.readJSON(file.src);
       var inner="";
       var index = 0;
@@ -33,7 +35,6 @@ module.exports = function(grunt) {
         var dest = file.dest+jsonfile[i]['position'] + '/';
         //create folders and files
         grunt.file.mkdir(dest);
-        grunt.log.writeln('File "' + dest + '" created.');
 
         //Generate countdown tracks, so do not include the current index.
         // console.log(index);
@@ -55,6 +56,12 @@ module.exports = function(grunt) {
         return string;
       }
       function formatted(entry){
+        if (entry.blurb) {
+          countdown_inner = countdown_inner_w_blurb;
+        }
+        else {
+          countdown_inner = countdown_inner_wo_blurb;
+        }
         var formatted = countdown_inner;
         formatted = formatted.replace('[@position1]', entry.position);
         formatted = formatted.replace('[@position2]', entry.position);
@@ -66,10 +73,14 @@ module.exports = function(grunt) {
         formatted = formatted.replace('[@work]', entry.work);
         formatted = formatted.replace('[@composer]', entry.composer);
         formatted = formatted.replace('[@movement]', entry.movement);
+        if (entry.blurb) {
+          formatted = formatted.replace('[@blurb]', entry.blurb);
+        }
         return formatted;
       }
       function writecountdown(thing){
         grunt.file.write(dest+'/'+'1-100.htm', thing);
+        grunt.log.writeln('File "' + dest + '1-100.htm" created.');
       }
     });
   });

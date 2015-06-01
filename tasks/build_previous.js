@@ -33,7 +33,6 @@ module.exports = function(grunt) {
         var dest = file.dest+jsonfile[i]['position'] + '/';
         //create folders and files
         grunt.file.mkdir(dest);
-        grunt.log.writeln('File "' + dest + '" created.');
 
         //Generate previous tracks, so do not include the current index.
         // console.log(index);
@@ -71,6 +70,7 @@ module.exports = function(grunt) {
       }
       function writePrevious(thing){
         grunt.file.write(dest+'/'+'previous.htm', thing);
+        grunt.log.writeln('File "' + dest + 'previous.htm" created.');
       }
     });
   });

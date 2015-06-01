@@ -61,7 +61,7 @@ module.exports = function(grunt) {
       countdown: {
         src: 'test/data/countdown.json',
         dest: 'dist/stages/',
-        countdown: ['test/data/1-100/1-100.htm', 'test/data/1-100/1-100-item.htm']
+        countdown: ['test/data/1-100/1-100.htm', 'test/data/1-100/1-100-item.htm', 'test/data/1-100/1-100-item-blurb.htm']
       }
     },
 
@@ -87,6 +87,7 @@ module.exports = function(grunt) {
   grunt.registerTask('hero', ['build_hero']);
   grunt.registerTask('100', ['build_full_countdown']);
   grunt.registerTask('latest', ['build_latest']);
+  grunt.registerTask('countdown', ['build_previous', 'build_hero', 'build_full_countdown', 'build_latest']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test']);

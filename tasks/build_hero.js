@@ -28,13 +28,13 @@ module.exports = function(grunt) {
       for (var i=jsonfile.length-1; i>=0; i--) {
         var content = [];
         var dest = file.dest+jsonfile[i]['position'] + '/';
-        grunt.log.writeln('File "' + dest + '" created.');
         grunt.file.mkdir(dest);
         content = buildPrevious(i);
         writePrevious(content);
       }
       function writePrevious(content){
         grunt.file.write(dest+'/'+'hero.htm', content);
+        grunt.log.writeln('File "' + dest + 'hero.htm" created.');
       }
       function buildPrevious(index){
           inner = hero_content.replace('[@position1]', jsonfile[index]['position']);

@@ -28,13 +28,13 @@ module.exports = function(grunt) {
       for (var i=jsonfile.length-1; i>=0; i--) {
         var content = [];
         var dest = file.dest+jsonfile[i]['position'] + '/';
-        grunt.log.writeln('File "' + dest + '" created.');
         grunt.file.mkdir(dest);
         content = buildPrevious(i);
         writePrevious(content);
       }
       function writePrevious(content){
         grunt.file.write(dest+'/'+'latest.json', content);
+        grunt.log.writeln('File "' + dest + 'latest.json" created.');
       }
       function buildPrevious(index){
           index = index-1 < 0? index: index-1;

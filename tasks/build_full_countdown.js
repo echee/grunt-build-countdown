@@ -31,6 +31,7 @@ module.exports = function(grunt) {
       var index = 0;
       var content = [];
       for (var i=jsonfile.length-1; i>=0; i--) {
+        var content = [];
         var dest = file.dest+jsonfile[i]['position'] + '/';
         //create folders and files
         grunt.file.mkdir(dest);

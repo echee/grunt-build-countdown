@@ -82,7 +82,7 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'build_countdown', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'countdown']);
   grunt.registerTask('previous', ['build_previous']);
   grunt.registerTask('hero', ['build_hero']);
   grunt.registerTask('100', ['build_full_countdown']);
@@ -90,6 +90,6 @@ module.exports = function(grunt) {
   grunt.registerTask('countdown', ['build_previous', 'build_hero', 'build_full_countdown', 'build_latest']);
 
   // By default, lint and run all tests.
-  grunt.registerTask('default', ['jshint', 'test']);
+  grunt.registerTask('default', ['test']);
 
 };

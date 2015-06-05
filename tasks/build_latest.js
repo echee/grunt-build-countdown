@@ -37,7 +37,8 @@ module.exports = function(grunt) {
         grunt.log.writeln('File "' + dest + 'latest.json" created.');
       }
       function buildPrevious(index){
-          index = index-1 < 0? index: index-1;
+          index = index;
+          // index = index-1 < 0? index: index-1;
           inner = latest_content.replace('[@position]', jsonfile[index]['position']);
           inner = inner.replace('[@key]', jsonfile[index]['key']);
           inner = inner.replace('[@composer]', jsonfile[index]['composer']);

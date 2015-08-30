@@ -2,22 +2,22 @@
   "name": "grunt-build-countdown",
   "description": "A grunt plugin for building directories and files from a json file",
   "version": "1.0.0",
-  "homepage": "https://github.com/cheee6y/grunt-build-countdown",
+  "homepage": "https://github.com/echee/grunt-build-countdown",
   "author": {
     "name": "Emma Chee",
     "email": "e.chee@hotmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/cheee6y/grunt-build-countdown.git"
+    "url": "git://github.com/echee/grunt-build-countdown.git"
   },
   "bugs": {
-    "url": "https://github.com/cheee6y/grunt-build-countdown/issues"
+    "url": "https://github.com/echee/grunt-build-countdown/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/cheee6y/grunt-build-countdown/blob/master/LICENSE-MIT"
+      "url": "https://github.com/echee/grunt-build-countdown/blob/master/LICENSE-MIT"
     }
   ],
   "engines": {
